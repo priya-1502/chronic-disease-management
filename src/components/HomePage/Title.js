@@ -3,8 +3,8 @@ import { brandName } from '../../utils/constants'
 
 const Title = () => {
   return (
-    <div>
-        <h1>{brandName}</h1>
+    <div class="text-white bg-gray-800">
+        <h1 class="text-xl font-bold p-10 ">{brandName}</h1>
     </div>
   )
 }
