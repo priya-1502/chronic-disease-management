@@ -5,6 +5,7 @@ import logo from '../images/login.png'
 import { Link, useNavigate } from "react-router";
 import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "../API/userApi"
+import { login } from "../utils/constants";
  
 function Login() {
   const navigate = useNavigate();
@@ -13,7 +14,13 @@ function Login() {
   const [password,setPassword] = useState("");
   
   const mutation = useMutation({ mutationFn: () => loginUser({ username, password }),
-  onSuccess: () => {
+  onSuccess: (data) => {
+    const token = data.response.token;
+    const userId = data.response.response;
+    console.log(data)
+    console.log(token)
+    console.log(userId)
+    login(token,userId);
     navigate("/dashboard")
   }, })
 

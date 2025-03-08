@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../../API/userApi"
 import { ArticlePlusDuotone } from "../../icons/ArticlePlusDuotone";
 import { Link } from "react-router";
+import { logout } from "../../utils/constants";
 
 const Dashboard = () => {
 
@@ -12,6 +13,12 @@ const Dashboard = () => {
         <h1>Loading......</h1>
     }
     const { response } = data || {};
+
+    const handleLogout = () => {
+      logout();
+    }
+
+    const storedData =  JSON.parse(localStorage.getItem("userData"))
 
   return (
     <div className="flex">
@@ -24,13 +31,13 @@ const Dashboard = () => {
           <Link to="/profile"><li className="my-2">My Profile</li></Link>
           <Link to="/Health metrics"><li className="my-2">Health metrics</li></Link>
           <Link to="/messages"><li className="my-2">Messages</li></Link>
-          <Link to="/"><li className="my-2">Logout</li></Link>
+          <Link to="/" onClick={handleLogout}><li className="my-2">Logout</li></Link>
         </div>
       </div>
       <div className="w-4/6 h-full bg-gray-50">
         <div className="m-4 p-4">
           <div className="mb-6">
-            <h1 className="text-4xl font-bold">Welcome, {response?.firstName} </h1>
+            <h1 className="text-4xl font-bold">Welcome, {storedData.firstName} </h1>
           </div>
 
           <div className="bg-white h-[280px] px-4">

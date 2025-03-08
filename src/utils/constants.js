@@ -1,3 +1,5 @@
+import { useCallback } from "react";
+
 export const brandName = "Bayer HealthCare";
 
 export const contentTitle = " Your Health, Our Priotrity";
@@ -20,3 +22,14 @@ export const cardsData = [{
     details : "Explore resources and support options for maintaining good mental health"
 }
 ]
+
+export const login =  (token,userId) => {
+    localStorage.setItem("userData", JSON.stringify(userId))
+
+    localStorage.setItem("token", token)
+  }
+
+export const logout = () => {
+    localStorage.removeItem("userData")
+    localStorage.removeItem("token")
+  }
