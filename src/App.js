@@ -1,12 +1,12 @@
 
+
 import './App.css';
+import Homepage from './components/HomePage/Homepage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <h1 className="text-8xl text-white font-bold">Hello, Tailwind CSS!</h1>
-      </header>
+      <Homepage/>
     </div>
   );
 }
