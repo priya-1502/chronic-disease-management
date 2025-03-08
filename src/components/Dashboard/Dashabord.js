@@ -7,7 +7,7 @@ import { Link } from "react-router";
 const Dashboard = () => {
 
     const { data, isLoading} = useQuery({ queryKey: ['getUser'], queryFn: () => getUser("67cc1238ed9052deb5e2c0ff") });
-    const { response } = data;
+    const { response } = data || {};
     console.log(response);
     
 
@@ -28,7 +28,7 @@ const Dashboard = () => {
       <div className="w-4/6 h-full bg-gray-50">
         <div className="m-4 p-4">
           <div className="mb-6">
-            <h1 className="text-4xl font-bold">Welcome, {response.firstName} </h1>
+            <h1 className="text-4xl font-bold">Welcome, {response?.firstName} </h1>
           </div>
 
           <div className="bg-white h-[280px] px-4">
