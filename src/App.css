@@ -12,7 +12,20 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.samplelogin{
+  border: solid thin #DADADA;
+    height: 295px;
+    padding: 14px;
+    margin-right: 20%;
+    margin-left: 16%;
+    margin-top: 5%;
+}
+.marginconstant {
+  margin:15px
+}
+.mandtory{
+  color:red
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -27,7 +40,9 @@
 .App-link {
   color: #61dafb;
 }
-
+.marginleft {
+  margin-left: 30%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +50,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+.formalign{
+
 }
