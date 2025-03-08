@@ -1,7 +1,16 @@
 import GaugeChart from "react-gauge-chart";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../../API/userApi"
 import { ArticlePlusDuotone } from "../../icons/ArticlePlusDuotone";
+import { Link } from "react-router";
 
 const Dashboard = () => {
+
+    const { data, isLoading} = useQuery({ queryKey: ['getUser'], queryFn: () => getUser("67cc1238ed9052deb5e2c0ff") });
+    const { response } = data;
+    console.log(response);
+    
+
   return (
     <div className="flex">
       <div className="w-1/6 h-screen bg-gray-500 text-white">
@@ -9,17 +18,17 @@ const Dashboard = () => {
           <h1 className="text-2xl font-bold">Bayer Health</h1>
         </div>
         <div className="list-none m-4">
-          <li className="my-2">Dashboard</li>
-          <li className="my-2">My Profile</li>
-          <li className="my-2">Health metrics</li>
-          <li className="my-2">Messages</li>
-          <li className="my-2">Logout</li>
+          <Link to="/dashboard"><li className="my-2">Dashboard</li></Link>
+          <Link to="/profile"><li className="my-2">My Profile</li></Link>
+          <Link to="/Health metrics"><li className="my-2">Health metrics</li></Link>
+          <Link to="/messages"><li className="my-2">Messages</li></Link>
+          <Link to="/"><li className="my-2">Logout</li></Link>
         </div>
       </div>
       <div className="w-4/6 h-full bg-gray-50">
         <div className="m-4 p-4">
           <div className="mb-6">
-            <h1 className="text-4xl font-bold">Welcome, Shanmugam</h1>
+            <h1 className="text-4xl font-bold">Welcome, {response.firstName} </h1>
           </div>
 
           <div className="bg-white h-[280px] px-4">

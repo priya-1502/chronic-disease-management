@@ -13,6 +13,7 @@ import reportWebVitals from './reportWebVitals';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import About from './components/About/About';
+import Profile from './components/Profile/Profile';
 
 const queryClient = new QueryClient()
 
@@ -27,6 +28,10 @@ root.render(
         <Route path="/about" element={<About />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>

@@ -1,4 +1,6 @@
-import instance from "./instance";
+import getInstance from "./instance";
+
+const instance = getInstance();
 
 export const userAPi = async () => {
     const data = await instance.get();
@@ -6,7 +8,7 @@ export const userAPi = async () => {
     return data;
 }
 
-export const user =  async (id) => {
-    const data = await instance.get("/id")
-    return data;
+export const getUser =  async (id) => {
+    const data = await instance.get(`/registration/${id}`)
+    return data.data;
 }
