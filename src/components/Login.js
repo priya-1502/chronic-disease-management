@@ -41,7 +41,7 @@ function Login() {
 
          </div>
          <div className="marginconstant">
-          <input placeholder="Password" onChange={(e)=> setPassword(e.target.value)}  type="text" className="border-1"  />
+          <input placeholder="Password" onChange={(e)=> setPassword(e.target.value)}  type="password" className="border-1"  />
           </div>
         <div>
           

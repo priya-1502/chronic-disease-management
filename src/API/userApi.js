@@ -17,3 +17,8 @@ export const loginUser =  async (payload) => {
     const data = await instance.post(`/registration/login`, payload)
     return data.data;
 }
+
+export const createUser =  async (payload) => {
+    const data = await instance.post(`/registration/create`, payload)
+    return data.data;
+}

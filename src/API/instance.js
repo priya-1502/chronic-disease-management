@@ -14,7 +14,7 @@ import { get, merge } from "lodash-es"
 
 
 const instance = axios.create({
-  baseURL: 'https://48ec-2401-4900-6332-22eb-fd50-95a4-c636-5619.ngrok-free.app',
+  baseURL: 'https://b11dnw7g-3000.inc1.devtunnels.ms',
   paramsSerializer: qs.stringify,
 });
 
