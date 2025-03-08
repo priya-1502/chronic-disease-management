@@ -10,6 +10,8 @@ import './index.css';
 import App from './App';
 import Dashboard from './components/Dashboard/Dashabord';
 import reportWebVitals from './reportWebVitals';
+import Registration from './components/Registration';
+import Login from './components/Login';
 import About from './components/About/About';
 
 const queryClient = new QueryClient()
@@ -23,6 +25,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
