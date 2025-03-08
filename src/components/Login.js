@@ -7,18 +7,18 @@ function Login() {
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
   
-
   return (
     <>
-    <div>
-        <div className="samplelogin">
-          <h1 className="marginleft">Login</h1>
-        </div>
-        <div className="formalign">
+    <div className="flex justify-center relative top-30">
+       
+          <h1 >Login</h1>
+        
+        <div >
          <form className="App">
           
           <div className="marginconstant">
-            <label>Username</label><span className="mandtory">*</span> <input onChange={(e)=> setUsername(e.target.value)} type="text" />
+            <label>Username</label><span className="mandtory">*</span> 
+            <input onChange={(e)=> setUsername(e.target.value)} type="text" />
          </div>
          <div className="marginconstant">
             <label>Password</label><span className="mandtory">*</span> <input onChange={(e)=> setPassword(e.target.value)}  type="text" />
