@@ -5,3 +5,8 @@ export const userAPi = async () => {
     console.log(data);
     return data;
 }
+
+export const user =  async (id) => {
+    const data = await instance.get("/id")
+    return data;
+}
