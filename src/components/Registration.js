@@ -2,9 +2,12 @@ import React from "react";
 import '../App.css'
 import { useState } from "react";
 import instance from "../API/instance";
+import { useNavigate } from "react-router-dom";
+import Title from "./HomePage/Title";
 
 function Registration() {
   const [gender, setGender] = useState("male");
+  const navigate = useNavigate()
   const handleRadioChange = (
     value
   ) => {
@@ -19,17 +22,22 @@ function Registration() {
   const [password,setPassword] = useState("");
   
   const handleSubmitform = (event) => {
-    debugger
+    
    var  body = {
     "firstName": firstname,
     "lastName": lastname,
     "password":password 
   }
   console.log(body);
-instance.post("registration/create",body);
+instance.post("registration/create",body).then();
+  navigate("/dashboard")
   }
   return (<>
   <div className="padingform">
+    <div className="p-10">
+    <Title/>
+    </div>
+
 <form>
     <div className="grid gap-6 mb-6 md:grid-cols-2">
         <div>

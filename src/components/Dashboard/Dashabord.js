@@ -1,5 +1,6 @@
 import GaugeChart from "react-gauge-chart";
 import { ArticlePlusDuotone } from "../../icons/ArticlePlusDuotone";
+import { Link } from "react-router";
 
 const Dashboard = () => {
   return (
@@ -13,7 +14,7 @@ const Dashboard = () => {
           <li className="my-2">My Profile</li>
           <li className="my-2">Health metrics</li>
           <li className="my-2">Messages</li>
-          <li className="my-2">Logout</li>
+          <Link to="/" className="my-2">Logout</Link>
         </div>
       </div>
       <div className="w-4/6 h-full bg-gray-50">
