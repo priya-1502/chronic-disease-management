@@ -2,13 +2,25 @@ import React from "react";
 import '../App.css'
 import { useState } from "react";
 import logo from '../images/login.png'
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { useMutation } from "@tanstack/react-query";
+import { loginUser } from "../API/userApi"
  
 function Login() {
+  const navigate = useNavigate();
   
   const [username,setUsername] = useState("");
   const [password,setPassword] = useState("");
   
+  const mutation = useMutation({ mutationFn: () => loginUser({ username, password }),
+  onSuccess: () => {
+    navigate("/dashboard")
+  }, })
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    mutation.mutate()
+  }
 
   return (
     <>
@@ -33,7 +45,7 @@ function Login() {
           </div>
         <div>
           
-           <input type={"submit"} style={{ backgroundColor: "#a1eafb" }}  className="p-1 mx-5 mb-5" />
+           <input type={"submit"} style={{ backgroundColor: "#a1eafb" }} onClick={handleSubmit} className="p-1 mx-5 mb-5" />
 
           <div>
           <Link to="/forgotPassword"> Forgot Password ?</Link>

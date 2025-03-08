@@ -7,9 +7,11 @@ import { Link } from "react-router";
 const Dashboard = () => {
 
     const { data, isLoading} = useQuery({ queryKey: ['getUser'], queryFn: () => getUser("67cc1238ed9052deb5e2c0ff") });
-    const { response } = data || {};
-    console.log(response);
     
+    if(isLoading){
+        <h1>Loading......</h1>
+    }
+    const { response } = data || {};
 
   return (
     <div className="flex">
