@@ -1,6 +1,8 @@
 import React from "react";
 import '../App.css'
 import { useState } from "react";
+import logo from '../images/login.png'
+import { Link } from "react-router";
  
 function Login() {
   
@@ -11,19 +13,35 @@ function Login() {
   return (
     <>
     <div>
-        <div className="samplelogin">
-          <h1 className="marginleft">Login</h1>
+          <div classname="flex justify-center">
+        <img   class="mx-auto  w-32 h-32" src={logo} alt="image description"/>
         </div>
-        <div className="formalign">
+
+          <h1 className="text-xl font-bold flex justify-center">Login</h1>
+
+     
+        <div >
          <form className="App">
-          
+
           <div className="marginconstant">
-            <label>Username</label><span className="mandtory">*</span> <input onChange={(e)=> setUsername(e.target.value)} type="text" />
+
+           <input placeholder="Username" onChange={(e)=> setUsername(e.target.value)} type="text" className="border-1" />
+
          </div>
          <div className="marginconstant">
-            <label>Password</label><span className="mandtory">*</span> <input onChange={(e)=> setPassword(e.target.value)}  type="text" />
+          <input placeholder="Password" onChange={(e)=> setPassword(e.target.value)}  type="text" className="border-1"  />
           </div>
-        <div> <input type={"submit"} style={{ backgroundColor: "#a1eafb" }} /></div>
+        <div>
+          
+           <input type={"submit"} style={{ backgroundColor: "#a1eafb" }}  className="p-1 mx-5 mb-5" />
+
+          <div>
+          <Link to="/forgotPassword"> Forgot Password ?</Link>
+          </div>
+
+          <p> New User ?<Link to="/register"> Register Here </Link>  </p>
+        
+        </div>
           </form>
           </div>
 

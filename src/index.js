@@ -13,6 +13,7 @@ import reportWebVitals from './reportWebVitals';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import About from './components/About/About';
+import ForgotPassword from './components/ForgotPassword';
 
 const queryClient = new QueryClient()
 
@@ -28,6 +29,7 @@ root.render(
         <Route path="/register" element={<Registration />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/forgotPassword" element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
     </QueryClientProvider>
