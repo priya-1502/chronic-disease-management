@@ -8,9 +8,9 @@ import {
 
 import './index.css';
 import App from './App';
-import About from './components/About/About';
 import Dashboard from './components/Dashboard/Dashabord';
 import reportWebVitals from './reportWebVitals';
+import About from './components/About/About';
 
 const queryClient = new QueryClient()
 

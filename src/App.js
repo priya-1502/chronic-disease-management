@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
+
 import './App.css';
 import { userAPi } from "./API/userApi";
+import Homepage from './components/HomePage/Homepage';
 
 function App() {
 
@@ -23,9 +25,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-      <h1 className="text-8xl text-white font-bold">Hello, Tailwind CSS!</h1>
-      </header>
+      <Homepage/>
     </div>
   );
 }
