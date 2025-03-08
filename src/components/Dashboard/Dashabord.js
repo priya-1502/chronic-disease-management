@@ -39,7 +39,7 @@ const Dashboard = () => {
               <div className="w-[400px] flex">
 
                 <div className="bg-white p-2">
-                    <h1 className="text-lg font-semibold">Hear Rate</h1>
+                    <h1 className="text-lg font-semibold">Heart Rate</h1>
                   <GaugeChart
                     id="gauge-chart1"
                     nrOfLevels={3}

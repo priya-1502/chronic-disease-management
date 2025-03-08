@@ -22,3 +22,8 @@ export const createUser =  async (payload) => {
     const data = await instance.post(`/registration/create`, payload)
     return data.data;
 }
+
+export const getMetrics =  async (id) => {
+    const data = await instance.get(`/metrics/${id}`)
+    return data.data;
+}
